@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        // choices a player has 
+        const choices = [
+            'Rock',
+            'Paper',
+            'Scissors'
+            ];
+
+        // computer picks a random choice
+        function computerPlay() {
+            var randomChoice = choices[Math.floor(Math.random()*choices.length)];
+            return randomChoice;
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            if (playerSelection == 'rock' && computerSelection == 'paper') {
+                prompt('You lose');
+            } else if (playerSelection === 'paper' && computerSelection == 'paper') {
+                prompt('Tie');
+            } else if (playerSelection === 'scissors' && computerSelection == 'paper') {
+                prompt('You win');
+            } else if (playerSelection === 'rock' && computerSelection == 'rock') {
+                prompt('Tie');
+            } else if (playerSelection === 'paper' && computerSelection == 'rock') {
+                prompt('You win');
+            } else if (playerSelection === 'scissors' && computerSelection == 'rock') {
+                prompt('You lose');
+            } else if (playerSelection === 'rock' && computerSelection == 'scissors') {
+                prompt('You win');
+            } else if (playerSelection === 'paper' && computerSelection == 'scissors') {
+                prompt('You lose');
+            } else if (playerSelection === 'scissors' && computerSelection == 'scissors') {
+                prompt('Tie');
+            } else {
+                prompt('something has gone wrong');
+            }
+        }
+
+        const playerSelection = "rock";
+        const computerSelection = computerPlay();
+        console.log(playRound(playerSelection, computerSelection));
+
+    </script>
+
+<h1>My Heading</h1>
+<p>My paragraph.</p>
+
+</body>
+</html>
