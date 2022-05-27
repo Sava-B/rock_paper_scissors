@@ -33,24 +33,27 @@
                 alert('restart the game and type in what you are supposed to')
             }};
 
-
+        // main function where the code is run.
         function game() {
             for (let i = 0; i < 6; i++) {
                 let playerSelection = prompt("Rock, Paper or Scissors").toLowerCase();
                 const computerSelection = computerPlay();
                 playRound(playerSelection, computerSelection);
             }
+            pointsTally()
+        }
+
+        function pointsTally(){
             console.log(points);
             if (points > 2) {
-                alert('You WIN!')
+                alert('You WIN!');
             } else {
-                alert('womp womp womp... you lose')
+                alert('womp womp womp... you lose');
             }
         }
 
         game()
 
     </script>
-
 </body>
 </html>
