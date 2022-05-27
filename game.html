@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
 <body>
+    <h1>Rock Paper Scissors Game</h1>
+    <p>This will be done through the console,
+    not here. Just open inspect and watch the magic unfold</p>
     <script>
         // choices a player has 
         const choices = [
             'rock',
-            'raper',
+            'paper',
             'scissors'
             ];
+
+        let points = 0
 
         // computer picks a random choice
         function computerPlay() {
@@ -18,20 +23,34 @@
         function playRound(playerSelection, computerSelection) {
             if (playerSelection == 'rock' && computerSelection == 'paper' || playerSelection == 'scissors' && computerSelection == 'rock' || playerSelection == 'paper' && computerSelection == 'scissors') {
                 console.log('You lose');
+
             } else if (playerSelection == 'scissors' && computerSelection == 'paper' || playerSelection == 'paper' && computerSelection == 'rock' || playerSelection == 'rock' && computerSelection == 'scissors') {
                 console.log('You win');
+                return points++
             } else if (playerSelection == computerSelection) {
                 console.log('Tie');
-            };
+            } else {
+                alert('restart the game and type in what you are supposed to')
+            }};
 
-        const playerSelection = 'rock';
-        const computerSelection = computerPlay();
-        playRound(playerSelection, computerSelection);
+
+        function game() {
+            for (let i = 0; i < 6; i++) {
+                let playerSelection = prompt("Rock, Paper or Scissors").toLowerCase();
+                const computerSelection = computerPlay();
+                playRound(playerSelection, computerSelection);
+            }
+            console.log(points);
+            if (points > 2) {
+                alert('You WIN!')
+            } else {
+                alert('womp womp womp... you lose')
+            }
+        }
+
+        game()
 
     </script>
-
-<h1>My Heading</h1>
-<p>My paragraph.</p>
 
 </body>
 </html>
